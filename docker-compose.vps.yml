@@ -1,0 +1,20 @@
+# docker-compose.vps.yml — Mode coexistence multi-sites
+#
+# Utilisé quand w-circle tourne déjà sur le VPS.
+# Vitrine ne bind aucun port : c'est w-circle nginx qui fait le reverse proxy
+# entrant et qui gère les certificats SSL pour tous les sites.
+#
+# Usage : docker compose -f docker-compose.vps.yml up -d
+
+services:
+  web:
+    build: .
+    container_name: vitrine
+    restart: unless-stopped
+    networks:
+      - default
+      - wcercle_net   # réseau partagé avec w-circle nginx
+
+networks:
+  wcercle_net:
+    external: true    # créé par w-circle, partagé entre tous les sites
