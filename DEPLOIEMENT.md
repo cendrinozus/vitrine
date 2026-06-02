@@ -73,7 +73,7 @@ Ou via git :
 
 ```bash
 ssh root@<IP_VPS>
-git clone <url-du-repo> /tmp/vitrine
+git clone https://github.com/cendrinozus/vitrine.git /tmp/vitrine
 ```
 
 ### 2. Lancer le script

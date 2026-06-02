@@ -35,6 +35,32 @@ WCERCLE_RUNNING=false
 if ! command -v apt &>/dev/null; then error "Ce script requiert un système Debian/Ubuntu"; fi
 if [[ $EUID -ne 0 ]]; then error "Exécuter en root : sudo bash deploy.sh"; fi
 
+# ── Vérification DNS ─────────────────────────────────────────────────────────
+check_dns() {
+    local domain="$1"
+    local vps_ip resolved_ip
+    # Récupère l'IP publique du VPS
+    vps_ip=$(curl -4 -s --max-time 5 https://api.ipify.org 2>/dev/null \
+             || curl -4 -s --max-time 5 https://ifconfig.me 2>/dev/null \
+             || hostname -I | awk '{print $1}')
+    # Résout le domaine via Google DNS (évite le cache local)
+    resolved_ip=$(dig +short "$domain" @8.8.8.8 2>/dev/null | grep -E '^[0-9]+\.' | tail -1)
+
+    if [[ -z "$resolved_ip" ]]; then
+        error "DNS non résolu pour $domain.\n\
+        → Le domaine n'est pas encore configuré chez votre registrar.\n\
+        → Ajoutez un enregistrement A : $domain → $vps_ip\n\
+        → Attendez la propagation DNS (5 à 30 min) puis relancez."
+    fi
+    if [[ "$resolved_ip" != "$vps_ip" ]]; then
+        error "DNS mal configuré pour $domain.\n\
+        → IP de ce VPS  : $vps_ip\n\
+        → IP résolue    : $resolved_ip\n\
+        → Pointez $domain vers $vps_ip dans votre registrar puis relancez."
+    fi
+    info "DNS $domain → $resolved_ip ✓"
+}
+
 echo ""
 echo -e "${GREEN}╔══════════════════════════════════════════════╗${NC}"
 echo -e "${GREEN}║   Déploiement — kofidouhadji.com             ║${NC}"
@@ -106,13 +132,22 @@ if $WCERCLE_RUNNING; then
     docker compose -f docker-compose.vps.yml build --quiet
     info "Image construite ✓"
 
+    # ── Vérification DNS avant certbot ──────────────────────────────────────
+    section "Vérification DNS"
+    apt install -y -qq dnsutils curl 2>/dev/null || true
+    check_dns "$DOMAIN"
+    check_dns "www.$DOMAIN"
+
     # ── Certificat SSL via w-circle ──────────────────────────────────────────
     # w-circle nginx sert déjà /.well-known/acme-challenge/ sur le port 80.
     # Quand kofidouhadji.com arrive sur ce port, Nginx l'accepte via le bloc
     # default (premier server_name) et sert le challenge depuis son volume
     # certbot_webroot — aucun arrêt de service n'est nécessaire.
     step "Obtention du certificat Let's Encrypt via w-circle (sans coupure)..."
-    (cd "$WCERCLE_DIR" && docker compose run --rm certbot certbot certonly \
+    # --entrypoint certbot est obligatoire : le service certbot de w-circle a un
+    # entrypoint personnalisé (boucle de renouvellement 12h) qui écrase la commande
+    # passée à "docker compose run" sans ce flag.
+    (cd "$WCERCLE_DIR" && docker compose run --rm --entrypoint certbot certbot certonly \
         --webroot \
         --webroot-path /var/www/certbot \
         --email "$EMAIL" \
@@ -245,6 +280,10 @@ else
     info "Nginx HTTP actif ✓"
 
     # Phase 2 — Certificat
+    section "Vérification DNS"
+    apt install -y -qq dnsutils curl 2>/dev/null || true
+    check_dns "$DOMAIN"
+    check_dns "www.$DOMAIN"
     step "Phase 2 — Obtention du certificat Let's Encrypt..."
     docker compose pull certbot
     docker compose run --rm certbot certbot certonly \
