@@ -4,18 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kofi Douhadji — Éducation & Coaching Financier</title>
-<meta name="description" content="Coaching et éducation financière pour la communauté francophone d'Amérique du Nord. Réservez votre appel découverte avec Kofi Douhadji.">
+<meta name="description" content="Bon salaire, base fragile, avenir financier incertain ? Je t'apprends à bâtir de vrais actifs — éducation financière pour la communauté francophone d'Amérique du Nord.">
+<link rel="icon" href="img/flying wings.PNG" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Space+Mono:wght@400;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#ffffff; 
+  --bg:#ffffff;
   --bg2:#f7f4ed;
   --ink:#111517;
   --muted:#4a5257;
-  --gold:#a8762e; 
-  --gold-dim:#8a5f22; 
+  --gold:#a8762e;
+  --gold-dim:#8a5f22;
   --gold-light:#fbf7f0;
   --line:#e8e4da;
   --accent:#a8762e;
@@ -29,7 +30,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offse
 h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.15;letter-spacing:-.02em}
 .mono{font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:700}
 
-/* NAVIGATION BAR */
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;padding:20px 28px;background:rgba(255,255,255,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--line);transition:background .3s}
 .brand{font-family:'Fraunces',serif;font-weight:900;font-size:1.25rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
 .brand span{color:var(--gold);margin:0 -.02em}
@@ -37,17 +38,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;justify-conten
 .nav-links{display:flex;gap:28px}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:600;transition:color .25s}
 .nav-links a:hover{color:var(--ink)}
+.book-link{text-decoration:none}
 .lang{display:flex;border:1px solid var(--line);border-radius:40px;overflow:hidden;background:#fff}
 .lang button{background:none;border:none;color:var(--muted);padding:7px 14px;cursor:pointer;font-family:'Space Mono',monospace;font-size:.7rem;font-weight:700;transition:.25s}
 .lang button.on{background:var(--ink);color:#fff}
 @media(max-width:760px){.nav-links{display:none}}
 
-/* HERO ACCUEIL */
+/* HERO */
 header{min-height:95vh;display:flex;align-items:center;position:relative;padding-top:100px;background:linear-gradient(180deg, #fff 0%, var(--bg2) 100%)}
 .hero-inner{position:relative;z-index:2;padding-top:40px;padding-bottom:60px}
 .eyebrow{color:var(--gold);margin-bottom:28px;display:flex;align-items:center;gap:14px}
 .eyebrow::before{content:'';width:40px;height:1.5px;background:var(--gold)}
-h1.title{font-size:clamp(2.2rem,5vw,4.2rem);max-width:16ch;font-weight:600;color:var(--ink);margin-bottom:24px}
+h1.title{font-size:clamp(2.2rem,5vw,4.2rem);max-width:20ch;font-weight:600;color:var(--ink);margin-bottom:24px}
 h1.title em{font-style:italic;color:var(--gold);font-weight:500}
 .lead{font-size:clamp(1.1rem,2.2vw,1.35rem);color:var(--muted);max-width:52ch;margin-bottom:44px;line-height:1.65}
 .cta-row{display:flex;gap:20px;flex-wrap:wrap;align-items:center}
@@ -58,18 +60,19 @@ h1.title em{font-style:italic;color:var(--gold);font-weight:500}
 .btn .arr{transition:transform .3s}
 .btn:hover .arr{transform:translateX(5px)}
 
-/* REVEAL ENGINE */
+/* REVEAL */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .85s cubic-bezier(0.16, 1, 0.3, 1),transform .85s cubic-bezier(0.16, 1, 0.3, 1)}
 .rv.show{opacity:1;transform:none}
 
-/* GLOBAL SECTIONS */
+/* SECTIONS */
 section{padding:140px 0;position:relative;background:var(--bg)}
 .sec-head{margin-bottom:70px;max-width:60ch}
 .sec-head .mono{color:var(--gold);display:block;margin-bottom:20px}
 .sec-head h2{font-size:clamp(1.8rem,3.6vw,2.75rem);font-weight:600;color:var(--ink)}
 
-/* PARCOURS / ABOUT */
-#about{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* SECTION 1 — STORY */
+#about{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding-top:70px;padding-bottom:70px}
+#offer{padding-top:70px;padding-bottom:40px}
 .about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:80px;align-items:center}
 @media(max-width:920px){.about-grid{grid-template-columns:1fr;gap:50px}}
 .about-text p{color:var(--muted);margin-bottom:24px;font-size:1.1rem;line-height:1.7}
@@ -78,13 +81,23 @@ section{padding:140px 0;position:relative;background:var(--bg)}
 .portrait{width:100%;border-radius:16px;display:block;object-fit:cover;aspect-ratio:4/5;box-shadow:0 20px 40px rgba(17,21,23,0.06)}
 .portrait-badge{position:absolute;bottom:-25px;left:-10px;width:84px;height:84px;border-radius:18px;border:6px solid var(--bg2);box-shadow:0 10px 24px rgba(17,21,23,0.12)}
 @media(max-width:820px){.portrait-badge{width:70px;height:70px;left:5px;bottom:-15px}}
-.cred-row{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:90px;padding-top:50px;border-top:1px solid var(--line)}
-@media(max-width:820px){.cred-row{grid-template-columns:1fr;gap:30px;margin-top:60px}}
-.cred{display:flex;flex-direction:column;gap:8px}
-.cred-t{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;color:var(--ink)}
-.cred-d{color:var(--muted);font-size:.95rem;font-weight:500}
 
-/* METHODES ET PROGRAMMES / OFFER GRID */
+/* SECTION 2 — AUTHORITY + MISSION COMBINED */
+#trust{background:var(--ink);padding:120px 0}
+.trust-inner{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:start}
+@media(max-width:900px){.trust-inner{grid-template-columns:1fr;gap:50px}}
+.trust-tagline{font-family:'Fraunces',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:600;color:#fff;line-height:1.2;margin-bottom:32px;max-width:22ch}
+.trust-tagline em{font-style:italic;color:var(--gold)}
+.trust-body p{color:#c9cdcf;font-size:1.05rem;line-height:1.75;margin-bottom:20px}
+.trust-body strong{color:#fff}
+.mission-line{margin-top:36px;padding-top:32px;border-top:1px solid #2b3338;color:var(--gold);font-family:'Fraunces',serif;font-size:1.15rem;font-style:italic;font-weight:500;line-height:1.5}
+.cred-stack{display:flex;flex-direction:column;gap:20px}
+.cred-card{border:1px solid #2b3338;border-radius:12px;padding:24px 28px;background:rgba(255,255,255,.04);transition:border-color .3s}
+.cred-card:hover{border-color:var(--gold)}
+.cred-card .cred-t{font-family:'Fraunces',serif;font-weight:600;font-size:1rem;color:#fff;margin-bottom:6px;display:block}
+.cred-card .cred-d{color:#848b8e;font-size:.88rem;font-weight:500}
+
+/* OFFER */
 .offer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:36px}
 @media(max-width:760px){.offer-grid{grid-template-columns:1fr;gap:28px}}
 .card{border:1px solid var(--line);border-radius:14px;padding:48px 42px;background:#fff;transition:all .4s cubic-bezier(0.16, 1, 0.3, 1);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 20px rgba(17,21,23,0.01)}
@@ -97,10 +110,9 @@ section{padding:140px 0;position:relative;background:var(--bg)}
 .card p{color:var(--muted);font-size:1.02rem;line-height:1.65}
 .card .card-action{margin-top:auto;padding-top:24px}
 .card .card-action a{color:var(--ink);text-decoration:none;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;transition:color .25s}
-.book-link{text-decoration:none}
 .card .card-action a:hover{color:var(--gold)}
 
-/* PRESSE & MEDIAS */
+/* PRESS */
 #press{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .press-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 @media(max-width:820px){.press-grid{grid-template-columns:repeat(2,1fr)}}
@@ -109,16 +121,16 @@ section{padding:140px 0;position:relative;background:var(--bg)}
 .press-item .src{font-family:'Space Mono',monospace;color:var(--gold);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
 .press-item .ttl{color:var(--ink);margin-top:14px;font-size:.98rem;font-weight:600;line-height:1.35}
 
-/* RESERVATION APPEL / BOOK CTA */
-#book{text-align:center;position:relative;overflow:hidden;background:#fff}
+/* BOOK */
+#book{text-align:center;position:relative;overflow:hidden;background:#fff;padding-top:40px;padding-bottom:40px}
 .book-mark{width:70px;height:70px;border-radius:18px;margin:0 auto 32px;display:block;box-shadow:0 10px 24px rgba(168,118,46,0.12)}
 .book-inner{position:relative;z-index:2;max-width:46ch;margin:0 auto}
 #book h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:24px;color:var(--ink)}
 #book h2 em{font-style:italic;color:var(--gold);font-weight:500}
 #book p{color:var(--muted);font-size:1.15rem;margin-bottom:44px}
 
-/* ECOSYSTEME WINNER'S CIRCLE */
-#winners{background:var(--bg2);padding:110px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* WINNERS */
+#winners{background:var(--bg2);padding:60px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .winners-inner{display:flex;align-items:center;gap:64px;max-width:none}
 .wc-logo-img{width:220px;flex-shrink:0;height:auto;border-radius:24px;display:block;margin:0;box-shadow:0 15px 35px rgba(17,21,23,0.06)}
 .wc-content{flex:1}
@@ -131,7 +143,7 @@ section{padding:140px 0;position:relative;background:var(--bg)}
 #winners .btn:hover{background:var(--ink);border-color:var(--ink)}
 @media(max-width:860px){.winners-inner{flex-direction:column;text-align:center;gap:40px}.wc-logo-img{width:160px}.wc-lines{display:inline-block;text-align:left}}
 
-/* FOOTER PIED DE PAGE */
+/* FOOTER */
 footer{border-top:1px solid var(--line);padding:70px 0;background:var(--ink)}
 footer .brand{color:#fff}
 .foot-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:40px}
@@ -141,7 +153,6 @@ footer .brand{color:#fff}
 .copy{color:#848b8e;font-size:.85rem}
 .disclaimer-box{width:100%;border-top:1px solid #2b3338;padding-top:32px;margin-top:12px}
 .disclaimer-text{color:#767e82;font-size:.78rem;line-height:1.6;max-width:110ch;font-family:'Archivo',sans-serif}
-
 .skip{position:absolute;left:-999px;top:10px;z-index:2000;background:var(--ink);color:#fff;padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:600}
 .skip:focus{left:14px}
 </style>
@@ -154,8 +165,8 @@ footer .brand{color:#fff}
   <div class="nav-right">
     <div class="nav-links">
       <a href="#about" data-fr="Parcours" data-en="About">Parcours</a>
+      <a href="#trust" data-fr="Confiance" data-en="Why Trust">Confiance</a>
       <a href="#offer" data-fr="Programmes" data-en="Programs">Programmes</a>
-      <a href="#press" data-fr="Presse" data-en="Press">Presse</a>
       <a href="#book" data-fr="Réserver" data-en="Book">Réserver</a>
     </div>
     <div class="lang" role="group" aria-label="Language / Langue">
@@ -168,117 +179,203 @@ footer .brand{color:#fff}
 <header id="main">
   <div class="wrap hero-inner">
     <div class="eyebrow mono rv" data-fr="Éducation & Coaching Financier" data-en="Financial Education & Coaching">Éducation & Coaching Financier</div>
-    <h1 class="title rv" style="transition-delay:.1s" data-fr="Bâtissez votre <em>liberté financière</em>, dans votre langue." data-en="Build your <em>financial freedom</em> — in your language.">Bâtissez votre <em>liberté financière</em>, dans votre langue.</h1>
-    <p class="lead rv" style="transition-delay:.2s" data-fr="Nous accompagnons la communauté francophone d'Amérique du Nord vers l'autonomie financière : investissement, bourse et habitudes d'argent — expliqués clairement, sans jargon." data-en="We help the French-speaking community of North America reach financial independence: investing, the stock market, and money habits — explained clearly, without the jargon.">Nous accompagnons la communauté francophone d'Amérique du Nord vers l'autonomie financière : investissement, bourse et habitudes d'argent — expliqués clairement, sans jargon.</p>
+    <h1 class="title rv" style="transition-delay:.1s"
+      data-fr="Bon salaire. Base fragile. Avenir financier incertain ? <em>Voici comment on change ça.</em>"
+      data-en="Good income. Fragile foundation. Uncertain financial future? <em>Here's how we change that.</em>">
+      Bon salaire. Base fragile. Avenir financier incertain ? <em>Voici comment on change ça.</em>
+    </h1>
+    <p class="lead rv" style="transition-delay:.2s"
+      data-fr="Tu travailles dur. Mais le système financier nord-américain reste complexe et opaque — et tes vrais actifs ne se bâtissent pas. Tu as l'ambition. Flying Wings t'apporte la clarté structurelle et les stratégies pour transformer tes revenus en patrimoine durable — étape par étape, dans ta langue : le Français."
+      data-en="You work hard. But the North American financial system stays complex and opaque — and your real assets are not building. You have the ambition. Flying Wings brings you the structural clarity and strategies to turn your income into lasting wealth — step by step, in your language: French.">
+      Tu travailles dur. Mais le système financier nord-américain reste complexe et opaque — et tes vrais actifs ne se bâtissent pas. Tu as l'ambition. Flying Wings t'apporte la clarté structurelle et les stratégies pour transformer tes revenus en patrimoine durable — étape par étape, dans ta langue : le Français.
+    </p>
     <div class="cta-row rv" style="transition-delay:.3s">
-      <a href="https://calendly.com/flying-wings/consultation" target="_blank" rel="noopener" class="btn" data-fr="Réserver un appel découverte" data-en="Book a discovery call">Réserver un appel découverte <span class="arr">→</span></a>
+      <a href="https://calendly.com/flying-wings/consultation" target="_blank" rel="noopener" class="btn"
+        data-fr="Réserver un appel découverte" data-en="Book a discovery call">
+        Réserver un appel découverte <span class="arr">→</span>
+      </a>
       <a href="#offer" class="btn ghost" data-fr="Voir nos programmes" data-en="Explore Programs">Voir nos programmes</a>
     </div>
   </div>
 </header>
 
+<!-- SECTION 1 — L'HISTOIRE -->
 <section id="about">
   <div class="wrap about-grid">
     <div class="about-text rv">
       <div class="sec-head" style="margin-bottom:34px">
-        <span class="mono" data-fr="Pourquoi Flying Wings" data-en="Why Flying Wings">Pourquoi Flying Wings</span>
-        <h2 data-fr="Pourquoi nous faire confiance." data-en="Why trust us.">Pourquoi nous faire confiance.</h2>
+        <span class="mono" data-fr="Le parcours de Kofi" data-en="Kofi's story">Le parcours de Kofi</span>
+        <h2 data-fr="Ce chemin, je l'ai vécu." data-en="I've lived this journey.">Ce chemin, je l'ai vécu.</h2>
       </div>
-      <p data-fr="Flying Wings est né d'un parcours réel : du Togo à l'US Air Force, de la musique à l'éducation financière. Nous savons ce que signifie repartir de zéro et bâtir, étape par étape." data-en="Flying Wings was born from a real journey: from Togo to the U.S. Air Force, from music to financial education. We know what it means to start over and build, step by step.">Flying Wings est né d'un parcours réel : du Togo à l'US Air Force, de la musique à l'éducation financière. Nous savons ce que signifie repartir de zéro et bâtir, étape par étape.</p>
-      <p><span data-fr="Fondé par Kofi Douhadji, auteur de " data-en="Founded by Kofi Douhadji, author of ">Fondé par Kofi Douhadji, auteur de </span><strong><a href="https://amzn.to/4aiWFG6" target="_blank" rel="noopener" class="book-link"><span data-fr="« Mes Premiers Pas en Bourse »" data-en="&ldquo;Mes Premiers Pas en Bourse&rdquo;">« Mes Premiers Pas en Bourse »</span></a></strong><span data-fr=", notre mission est de rendre la littératie financière accessible à la communauté francophone d'Amérique du Nord, dans sa propre langue." data-en=", our mission is to make financial literacy accessible to the French-speaking community of North America, in their own language.">, notre mission est de rendre la littératie financière accessible à la communauté francophone d'Amérique du Nord, dans sa propre langue.</span></p>
-      <p data-fr="L'argent n'est pas qu'une question de chiffres — c'est une question d'état d'esprit. Nous vous aidons à transformer les deux." data-en="Money isn't only about numbers — it's about mindset. We help you transform both.">L'argent n'est pas qu'une question de chiffres — c'est une question d'état d'esprit. Nous vous aidons à transformer les deux.</p>
+      <p data-fr="Mon parcours, similaire au tien, n'est pas fait de ligne droite. Il est fait de transitions réelles et de barrières que j'ai appris à franchir. Né au Togo dans une famille modeste, j'ai d'abord bâti une entreprise en génie civil et créé des emplois pendant 8 ans avant de tout quitter pour recommencer à zéro aux États-Unis. J'ai traversé le choc des systèmes, l'incertitude culturelle, et la complexité brute des structures nord-américaines."
+        data-en="My journey, similar to yours, is not a straight line. It is made of real transitions and barriers I learned to break through. Born in Togo into a modest family, I first built a civil engineering firm and created jobs for 8 years before leaving everything behind to start over from zero in the United States. I faced the system shock, the cultural uncertainty, and the raw complexity of North American structures.">
+        Mon parcours, similaire au tien, n'est pas fait de ligne droite. Il est fait de transitions réelles et de barrières que j'ai appris à franchir. Né au Togo dans une famille modeste, j'ai d'abord bâti une entreprise en génie civil et créé des emplois pendant 8 ans avant de tout quitter pour recommencer à zéro aux États-Unis. J'ai traversé le choc des systèmes, l'incertitude culturelle, et la complexité brute des structures nord-américaines.
+      </p>
+      <p data-fr="Pour décoder ce nouveau monde de l'intérieur, j'ai rejoint l'US Air Force comme simple Airman, naviguant dans les rouages d'une culture nouvelle tout en reprenant mes études universitaires, avec une famille à charge. Je sais exactement ce que signifie devoir rebâtir ses fondations."
+        data-en="To decode this new world from the inside out, I joined the US Air Force as a simple Airman, navigating the inner workings of a new culture while pursuing my university studies with a family to support. I know exactly what it means to have to rebuild your foundations.">
+        Pour décoder ce nouveau monde de l'intérieur, j'ai rejoint l'US Air Force comme simple Airman, naviguant dans les rouages d'une culture nouvelle tout en reprenant mes études universitaires, avec une famille à charge. Je sais exactement ce que signifie devoir rebâtir ses fondations.
+      </p>
+      <p data-fr="L'indépendance financière n'est pas qu'une question de chiffres — c'est une question de systèmes et de mindset. Je t'aide à transformer les deux."
+        data-en="Financial independence isn't only about numbers — it's about systems and mindset. I help you transform both.">
+        L'indépendance financière n'est pas qu'une question de chiffres — c'est une question de systèmes et de mindset. Je t'aide à transformer les deux.
+      </p>
     </div>
     <div class="rv portrait-wrap" style="transition-delay:.15s">
       <img src="img/kofi.PNG" alt="Kofi Douhadji" class="portrait">
       <img src="img/flying wings.PNG" alt="Flying Wings" class="portrait-badge">
     </div>
   </div>
-  <div class="wrap cred-row rv">
-    <div class="cred"><span class="cred-t" data-fr="Togo → US Air Force" data-en="Togo → US Air Force">Togo → US Air Force</span><span class="cred-d" data-fr="Un parcours bâti sur la détermination" data-en="A journey built on determination">Un parcours bâti sur la détermination</span></div>
-    <div class="cred"><span class="cred-t" data-fr="Auteur" data-en="Author">Auteur</span><span class="cred-d" data-fr="« Mes Premiers Pas en Bourse »" data-en=""Mes Premiers Pas en Bourse"">« Mes Premiers Pas en Bourse »</span></div>
-    <div class="cred"><span class="cred-t" data-fr="Reconnu" data-en="Recognized">Reconnu</span><span class="cred-d" data-fr="Wikipedia, KREM, SBA, Bellevue" data-en="Wikipedia, KREM, SBA, Bellevue">Wikipedia, KREM, SBA, Bellevue</span></div>
+</section>
+
+<!-- SECTION 2 — AUTORITÉ + MISSION COMBINED -->
+<section id="trust" style="padding:70px 0;background:var(--ink)">
+  <div class="wrap">
+    <div class="trust-inner rv">
+      <div class="trust-body">
+        <span class="mono" style="color:var(--gold);display:block;margin-bottom:24px"
+          data-fr="Pourquoi Flying Wings"
+          data-en="Why Flying Wings">Pourquoi Flying Wings</span>
+        <h2 class="trust-tagline"
+          data-fr="Pourquoi nous faire confiance."
+          data-en="Why trust us.">
+          Pourquoi nous faire confiance.
+        </h2>
+        <p style="color:var(--gold);font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1rem,2vw,1.2rem);font-weight:500;line-height:1.5;margin-top:16px;max-width:52ch"
+          data-fr="La rigueur du commandement. La science du coaching. Et une seule raison pour avoir quitté le service militaire : ta liberté financière."
+          data-en="Command discipline. Elite coaching. And one single reason for leaving military service: your financial freedom.">
+          La rigueur du commandement. La science du coaching. Et une seule raison pour avoir quitté le service militaire : ta liberté financière.
+        </p>
+
+      </div>
+      <div class="cred-stack">
+        <div class="cred-card">
+          <span class="cred-t" data-fr="Capitaine — US Air Force (Vétéran)" data-en="Captain — US Air Force (Veteran)">Capitaine — US Air Force (Vétéran)</span>
+          <span class="cred-d" data-fr="Discipline stratégique et exécution au plus haut niveau" data-en="Strategic discipline and execution at the highest level">Discipline stratégique et exécution au plus haut niveau</span>
+        </div>
+        <div class="cred-card">
+          <span class="cred-t" data-fr="M.S. Executive Coaching" data-en="M.S. Executive Coaching">M.S. Executive Coaching</span>
+          <span class="cred-d" data-fr="Université de Bellevue — Management & Leadership" data-en="Bellevue University — Management & Leadership">Université de Bellevue — Management & Leadership</span>
+        </div>
+        <div class="cred-card">
+          <span class="cred-t"><span data-fr="Auteur — " data-en="Author — ">Auteur — </span><a href="https://amzn.to/4aiWFG6" target="_blank" rel="noopener" class="book-link"><span data-fr="« Mes Premiers Pas en Bourse »" data-en="&ldquo;Mes Premiers Pas en Bourse&rdquo;">« Mes Premiers Pas en Bourse »</span></a></span>
+          <span class="cred-d" data-fr="Le premier guide pédagogique en français conçu pour les immigrants qui naviguent les marchés boursiers nord-américains." data-en="The first educational workbook in French specifically designed for immigrants navigating the North American stock market.">Le premier guide pédagogique en français conçu pour les immigrants qui naviguent les marchés boursiers nord-américains.</span>
+        </div>
+        <div class="cred-card" style="padding:24px 28px">
+          <span style="display:block;margin-bottom:20px;font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#848b8e"
+            data-fr="Parutions" data-en="As seen in">Parutions</span>
+          <div style="display:flex;flex-direction:row;align-items:center;justify-content:space-between;gap:10px">
+            <a href="https://news.bellevue.edu/bu-alum-douhadji-turns-hardship-into-opportunity-through-determination-education/" target="_blank" rel="noopener" title="La formation — Bellevue University"
+               style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,0.06);border-radius:10px;padding:14px 8px;transition:background .25s;text-decoration:none"
+               onmouseover="this.style.background='rgba(168,118,46,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+              <img src="img/bellevue-university-2.jpg.jpeg" alt="Bellevue University" style="height:68px;width:auto;max-width:90%;object-fit:contain;filter:grayscale(100%) brightness(2)">
+            </a>
+            <a href="https://www.krem.com/article/news/local/spokane-county/fairchild-airman-was-once-famous-musician-in-togo-africa/293-613136897" target="_blank" rel="noopener" title="La reconnaissance — KREM News"
+               style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,0.06);border-radius:10px;padding:14px 8px;transition:background .25s;text-decoration:none"
+               onmouseover="this.style.background='rgba(168,118,46,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+              <img src="img/KREM2.png" alt="KREM News" style="height:68px;width:auto;max-width:90%;object-fit:contain;filter:grayscale(100%) brightness(2)">
+            </a>
+            <a href="https://gnwbc.org/a-bridge-across-languages-how-one-airman-is-redefining-financial-literacy-for-french-speaking-immigrants/" target="_blank" rel="noopener" title="La validation — GNWBC / SBA"
+               style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,0.06);border-radius:10px;padding:14px 8px;transition:background .25s;text-decoration:none"
+               onmouseover="this.style.background='rgba(168,118,46,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+              <img src="img/GNWBC-Full-Color-Logo-4.26-1-1-1.webp" alt="GNWBC / SBA" style="height:68px;width:auto;max-width:90%;object-fit:contain;filter:grayscale(100%) brightness(2)">
+            </a>
+            <a href="https://en.wikipedia.org/wiki/Kofi_Douhadji" target="_blank" rel="noopener" title="L'établissement — Wikipedia"
+               style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:rgba(255,255,255,0.06);border-radius:10px;padding:14px 8px;transition:background .25s;text-decoration:none"
+               onmouseover="this.style.background='rgba(168,118,46,0.18)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+              <img src="img/2000px-Wikipedia-logo-v2-en.jpg.jpeg" alt="Wikipedia" style="height:68px;width:auto;max-width:90%;object-fit:contain;filter:grayscale(100%) brightness(2)">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="offer">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="mono" data-fr="Choisir votre parcours" data-en="Choose your path">Choisir votre parcours</span>
-      <h2 data-fr="Deux façons de transformer vos finances." data-en="Two ways to transform your finances.">Deux façons de transformer vos finances.</h2>
+      <span class="mono" data-fr="Choisir ton parcours" data-en="Choose your path">Choisir ton parcours</span>
+      <h2 data-fr="Deux façons de transformer tes finances." data-en="Two ways to transform your finances.">Deux façons de transformer tes finances.</h2>
     </div>
     <div class="offer-grid">
       <div class="card rv">
         <div class="card-top">
           <span class="num">01</span>
           <h3 data-fr="L'Écosystème Communautaire" data-en="The Community Ecosystem">L'Écosystème Communautaire</h3>
-          <p data-fr="Rejoignez Winner's Circle. Un accompagnement de groupe hebdomadaire axé sur la mise en pratique immédiate. Décryptez les marchés, simplifiez vos habitudes d'investissement et grandissez aux côtés d'une communauté francophone ambitieuse." data-en="Join the Winner's Circle. A weekly group ecosystem built on real application. Navigate the stock market, streamline your money habits, and scale alongside a high-vibe French-speaking network.">Rejoignez Winner's Circle. Un accompagnement de groupe hebdomadaire axé sur la mise en pratique immédiate. Décryptez les marchés, simplifiez vos habitudes d'investissement et grandissez aux côtés d'une communauté francophone ambitieuse.</p>
+          <p data-fr="Rejoins Winner's Circle. Un écosystème communautaire avec des ressources à la demande et des rencontres lives hebdomadaires axées sur la maîtrise du système nord-américain. Décodes les règles financières, élimines les blocages psychologiques liés à l'argent, et optimises tes stratégies de gestion pour bâtir ton indépendance financière aux côtés d'une communauté déterminée et ambitieuse."
+            data-en="Join Winner's Circle. A community ecosystem with on-demand resources and weekly live meetings focused on mastering the North American system. Decode the financial rules, eliminate money mindset blocks, and optimize your management strategies to build your financial freedom alongside a driven and ambitious community.">
+            Rejoins Winner's Circle. Un écosystème communautaire avec des ressources à la demande et des rencontres lives hebdomadaires axées sur la maîtrise du système nord-américain. Décodes les règles financières, élimines les blocages psychologiques liés à l'argent, et optimises tes stratégies de gestion pour bâtir ton indépendance financière aux côtés d'une communauté déterminée et ambitieuse.
+          </p>
         </div>
         <div class="card-action">
-          <a href="#winners" data-fr="Découvrir La Communauté →" data-en="Explore the community →">Découvrir La Communauté →</a>
+          <a href="#winners" data-fr="Découvrir la communauté →" data-en="Explore the community →">Découvrir la communauté →</a>
         </div>
       </div>
       <div class="card featured rv" style="transition-delay:.1s">
         <div class="card-top">
           <span class="num">02</span>
           <h3 data-fr="Coaching Privé 1:1" data-en="1:1 Private Coaching">Coaching Privé 1:1</h3>
-          <p data-fr="Un partenariat stratégique exclusif conçu pour briser définitivement la confusion financière. Idéal pour maîtriser les cadres d'investissement stratégiques et aligner vos habitudes sur vos grands objectifs de vie, avec un accès direct et de proximité." data-en="An exclusive strategic partnership engineered to permanently eliminate financial friction. Master core strategic investment frameworks and align your money habits to your legacy goals, paired with direct structural proximity.">Un partenariat stratégique exclusif conçu pour briser définitivement la confusion financière. Idéal pour maîtriser les cadres d'investissement stratégiques et aligner vos habitudes sur vos grands objectifs de vie, avec un accès direct et de proximité.</p>
+          <p data-fr="Un partenariat stratégique de haute proximité conçu pour une transformation personnelle permanente, propulsé par des outils avancés d'executive coaching. Pour éliminer définitivement la confusion financière et fixer un objectif SMART. Ensemble, on applique la discipline du commandement pour maîtriser les structures d'investissement étape par étape, aligner tes habitudes et accélérer tes actifs. Accès direct, exécution pure."
+            data-en="A high-proximity strategic partnership engineered for permanent personal transformation, powered by elite executive coaching frameworks. Permanently eliminate financial confusion and lock a clear SMART goal. Together, we deploy command-level discipline to master structural investment frameworks step-by-step, realign your habits, and accelerate your asset-building. Direct access, pure execution.">
+            Un partenariat stratégique de haute proximité conçu pour une transformation personnelle permanente, propulsé par des outils avancés d'executive coaching. Pour éliminer définitivement la confusion financière et fixer un objectif SMART. Ensemble, on applique la discipline du commandement pour maîtriser les structures d'investissement étape par étape, aligner tes habitudes et accélérer tes actifs. Accès direct, exécution pure.
+          </p>
         </div>
         <div class="card-action">
-          <a href="#book" data-fr="Réserver un appel découverte pour voir si nos solutions vous conviennent →" data-en="Book a discovery call to see if our solutions are the right fit for you →">Réserver un appel découverte pour voir si nos solutions vous conviennent →</a>
+          <a href="#book" data-fr="Réserver un appel découverte pour voir si nos solutions te conviennent →" data-en="Book a discovery call to see if our solutions are right for you →">Réserver un appel découverte pour voir si nos solutions te conviennent →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="press">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <span class="mono" data-fr="Vu dans les médias" data-en="As seen in">Vu dans les médias</span>
-      <h2 data-fr="Une histoire reconnue." data-en="A recognized story.">Une histoire reconnue.</h2>
-    </div>
-    <div class="press-grid">
-      <a class="press-item rv" href="https://en.wikipedia.org/wiki/Kofi_Douhadji" target="_blank" rel="noopener">
-        <div class="src">Wikipedia</div>
-        <div class="ttl" data-fr="Page biographique" data-en="Biography page">Page biographique</div>
-      </a>
-      <a class="press-item rv" style="transition-delay:.07s" href="https://gnwbc.org/a-bridge-across-languages-how-one-airman-is-redefining-financial-literacy-for-french-speaking-immigrants/" target="_blank" rel="noopener">
-        <div class="src">GNWBC / SBA</div>
-        <div class="ttl" data-fr="Redéfinir la littératie financière" data-en="Redefining financial literacy">Redéfinir la littératie financière</div>
-      </a>
-      <a class="press-item rv" style="transition-delay:.14s" href="https://www.krem.com/article/news/local/spokane-county/fairchild-airman-was-once-famous-musician-in-togo-africa/293-613136897" target="_blank" rel="noopener">
-        <div class="src">KREM News</div>
-        <div class="ttl" data-fr="De musicien à aviateur" data-en="From musician to airman">De musicien à aviateur</div>
-      </a>
-      <a class="press-item rv" style="transition-delay:.21s" href="https://news.bellevue.edu/bu-alum-douhadji-turns-hardship-into-opportunity-through-determination-education/" target="_blank" rel="noopener">
-        <div class="src">Bellevue University</div>
-        <div class="ttl" data-fr="L'épreuve transformée en opportunité" data-en="Hardship into opportunity">L'épreuve transformée en opportunité</div>
-      </a>
-    </div>
-  </div>
-</section>
+
 
 <section id="book">
   <div class="wrap book-inner rv">
     <img src="img/flying wings.PNG" alt="" class="book-mark" aria-hidden="true">
     <span class="mono" style="color:var(--gold);display:block;margin-bottom:20px" data-fr="Première étape" data-en="First step">Première étape</span>
-    <h2 data-fr="Réservons votre <em>appel découverte</em>." data-en="Let's book your <em>discovery call</em>.">Réservons votre <em>appel découverte</em>.</h2>
-    <p data-fr="Un appel gratuit et sans engagement pour comprendre votre situation et voir comment nous pouvons vous aider à avancer." data-en="A free, no-obligation call to understand your situation and see how we can help you move forward.">Un appel gratuit et sans engagement pour comprendre votre situation et voir comment nous pouvons vous aider à avancer.</p>
-    <a href="https://calendly.com/flying-wings/consultation" target="_blank" rel="noopener" id="bookBtn" class="btn" data-fr="Choisir un créneau" data-en="Pick a time">Choisir un créneau <span class="arr">→</span></a>
+    <h2 data-fr="Réservons ton <em>appel découverte</em>." data-en="Book your <em>discovery call</em>.">Réservons ton <em>appel découverte</em>.</h2>
+    <p data-fr="Un appel gratuit et sans engagement pour comprendre ta situation et voir comment nous pouvons t'aider à avancer."
+      data-en="A free, no-obligation call to understand your situation and see how we can help you move forward.">
+      Un appel gratuit et sans engagement pour comprendre ta situation et voir comment nous pouvons t'aider à avancer.
+    </p>
+    <a href="https://calendly.com/flying-wings/consultation" target="_blank" rel="noopener" id="bookBtn" class="btn"
+      data-fr="Choisir un créneau" data-en="Pick a time">
+      Choisir un créneau <span class="arr">→</span>
+    </a>
   </div>
 </section>
 
+<div style="background:var(--bg2);padding:32px 28px;text-align:center;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <p style="font-family:'Fraunces',serif;font-size:clamp(1.1rem,2.5vw,1.5rem);font-style:italic;color:var(--gold);font-weight:500;max-width:40ch;margin:0 auto;line-height:1.5">
+      « Celui qui court avec les vainqueurs augmente leur nombre. »
+    </p>
+  </div>
+</div>
 <section id="winners">
   <div class="wrap winners-inner rv">
     <img src="img/winners circle.PNG" alt="Winner's Circle" class="wc-logo-img">
     <div class="wc-content">
-      <h2 class="wc-head" data-fr="Rejoignez Winner's Circle." data-en="Join the Winner's Circle.">Rejoignez Winner's Circle.</h2>
+      <h2 class="wc-head" data-fr="Rejoins Winner's Circle." data-en="Join Winner's Circle.">Rejoins Winner's Circle.</h2>
       <ul class="wc-lines">
-        <li data-fr="Une communauté francophone dynamique axée sur la mise en pratique réelle." data-en="A vibrant French-speaking community focused on real practical application.">Une communauté francophone dynamique axée sur la mise en pratique réelle.</li>
-        <li data-fr="Accompagnement pragmatique, ressources exclusives et stratégies de groupe chaque semaine." data-en="Pragmatic guidance, exclusive resources, and community strategies every week.">Accompagnement pragmatique, ressources exclusives et stratégies de groupe chaque semaine.</li>
-        <li data-fr="Grandissez entouré d'investisseurs déterminés à bâtir leur avenir." data-en="Grow surrounded by investors determined to build their legacy.">Grandissez entouré d'investisseurs déterminés à bâtir leur avenir.</li>
+        <li data-fr="La communauté exclusive que j'aurais voulu avoir 10 ans plus tôt, axée sur la mise en pratique réelle."
+          data-en="The exclusive community I wish I had 10 years ago, focused on real-world execution.">
+          La communauté exclusive que j'aurais voulu avoir 10 ans plus tôt, axée sur la mise en pratique réelle.
+        </li>
+        <li data-fr="Outils et ressources pragmatiques, enseignements et stratégies de groupe hebdomadaires."
+          data-en="Pragmatic tools and resources, weekly group lessons and strategies.">
+          Outils et ressources pragmatiques, enseignements et stratégies de groupe hebdomadaires.
+        </li>
+        <li data-fr="Progresse entouré d'investisseurs déterminés à bâtir leur liberté financière."
+          data-en="Progress surrounded by investors determined to build their financial freedom.">
+          Progresse entouré d'investisseurs déterminés à bâtir leur liberté financière.
+        </li>
       </ul>
-      <a href="https://winners-circle-community.circle.so/checkout/subscription" target="_blank" rel="noopener" class="btn" data-fr="Rejoindre Winner's Circle" data-en="Join the Winner's Circle">Rejoindre Winner's Circle <span class="arr">→</span></a>
+      <a href="https://winners-circle-community.circle.so/checkout/subscription" target="_blank" rel="noopener" class="btn"
+        data-fr="Rejoindre Winner's Circle" data-en="Join Winner's Circle">
+        Rejoindre Winner's Circle <span class="arr">→</span>
+      </a>
     </div>
   </div>
 </section>
@@ -288,13 +385,17 @@ footer .brand{color:#fff}
     <a href="#main" class="brand">Kofi<span>.</span>Douhadji</a>
     <div class="foot-links">
       <a href="https://www.tiktok.com/@kofi.douhadji" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.facebook.com/kofidouhadji" target="_blank" rel="noopener">Facebook</a>
       <a href="#about" data-fr="Parcours" data-en="About">Parcours</a>
       <a href="#book" data-fr="Réserver" data-en="Book">Réserver</a>
     </div>
     <div class="copy">© <span id="yr"></span> Kofi Douhadji</div>
-
     <div class="disclaimer-box">
-      <p class="disclaimer-text" data-fr="Avis de non-responsabilité : Le contenu de ce site web est fourni uniquement à des fins éducatives et d'information générale. Les services proposés par Flying Wings constituent un accompagnement et un coaching en matière de littératie financière et de développement des habitudes financières ; ils ne constituent en aucun cas des conseils financiers personnalisés, des recommandations d'investissement, ou des services de planification fiscale ou juridique personnalisés. Consultez toujours un professionnel qualifié avant de prendre des décisions financières importantes." data-en="Disclaimer: The content provided on this website is for educational and general informational purposes only. Services offered by Flying Wings consist of financial literacy coaching and money habit coaching; they do not constitute personalized investment advice, customized financial planning, or tax/legal recommendations. Always consult with a licensed professional before making significant financial decisions.">Avis de non-responsabilité : Le contenu de ce site web est fourni uniquement à des fins éducatives et d'information générale. Les services proposés par Flying Wings constituent un accompagnement et un coaching en matière de littératie financière et de développement des habitudes financières ; ils ne constituent en aucun cas des conseils financiers personnalisés, des recommandations d'investissement, ou des services de planification fiscale ou juridique personnalisés. Consultez toujours un professionnel qualifié avant de prendre des décisions financières importantes.</p>
+      <p class="disclaimer-text"
+        data-fr="Avis de non-responsabilité : Le contenu de ce site web est fourni uniquement à des fins éducatives et d'information générale. Les services proposés par Flying Wings constituent un accompagnement et un coaching en matière de littératie financière et de développement des habitudes financières ; ils ne constituent en aucun cas des conseils financiers personnalisés, des recommandations d'investissement, ou des services de planification fiscale ou juridique personnalisés. Consultez toujours un professionnel qualifié avant de prendre des décisions financières importantes."
+        data-en="Disclaimer: The content provided on this website is for educational and general informational purposes only. Services offered by Flying Wings consist of financial literacy coaching and money habit coaching; they do not constitute personalized investment advice, customized financial planning, or tax/legal recommendations. Always consult with a licensed professional before making significant financial decisions.">
+        Avis de non-responsabilité : Le contenu de ce site web est fourni uniquement à des fins éducatives et d'information générale. Les services proposés par Flying Wings constituent un accompagnement et un coaching en matière de littératie financière et de développement des habitudes financières ; ils ne constituent en aucun cas des conseils financiers personnalisés, des recommandations d'investissement, ou des services de planification fiscale ou juridique personnalisés. Consultez toujours un professionnel qualifié avant de prendre des décisions financières importantes.
+      </p>
     </div>
   </div>
 </footer>
@@ -303,36 +404,31 @@ footer .brand{color:#fff}
 const metaSEO = {
   fr: {
     title: "Kofi Douhadji — Éducation & Coaching Financier",
-    desc: "Coaching et éducation financière pour la communauté francophone d'Amérique du Nord. Réservez votre appel découverte avec Kofi Douhadji."
+    desc: "Bon salaire, base fragile, avenir financier incertain ? Je t'apprends à bâtir de vrais actifs — éducation financière pour la communauté francophone d'Amérique du Nord."
   },
   en: {
     title: "Kofi Douhadji — Financial Education & Coaching",
-    desc: "Financial coaching and education for the French-speaking community of North America. Book your discovery call with Kofi Douhadji."
+    desc: "Good income, fragile foundation, uncertain future? I teach you to build real assets — financial education for the francophone community of North America."
   }
 };
-
 function setLang(l){
   document.documentElement.lang=l;
   document.querySelectorAll('[data-fr]').forEach(function(el){
     var v=el.getAttribute('data-'+l); if(v!==null) el.innerHTML=v;
   });
-
-  document.title = metaSEO[l].title;
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if(metaDesc) metaDesc.setAttribute('content', metaSEO[l].desc);
-
+  document.title=metaSEO[l].title;
+  var metaDesc=document.querySelector('meta[name="description"]');
+  if(metaDesc) metaDesc.setAttribute('content',metaSEO[l].desc);
   document.getElementById('bfr').classList.toggle('on',l==='fr');
   document.getElementById('ben').classList.toggle('on',l==='en');
   document.getElementById('bfr').setAttribute('aria-pressed',l==='fr');
   document.getElementById('ben').setAttribute('aria-pressed',l==='en');
   try{localStorage.setItem('lang',l)}catch(e){}
 }
-
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.12});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 document.getElementById('yr').textContent=new Date().getFullYear();
-
-try{var saved=localStorage.getItem('lang'); if(saved&&saved!=='fr') setLang(saved);}catch(e){}
+try{var saved=localStorage.getItem('lang');if(saved&&saved!=='fr')setLang(saved);}catch(e){}
 </script>
 </body>
 </html>
