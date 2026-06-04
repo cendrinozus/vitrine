@@ -188,6 +188,47 @@ cd /opt/wcercle && docker compose exec web nginx -t && docker compose exec web n
 
 ---
 
+## Mettre à jour le site
+
+### Workflow complet (local → VPS)
+
+**1. Pousser les modifications sur GitHub** (depuis votre machine locale) :
+
+```bash
+git add -A
+git commit -m "mise à jour du site"
+git push
+```
+
+**2. Sur le VPS — tirer les changements et reconstruire** :
+
+```bash
+cd /opt/vitrine
+git pull
+docker compose -f docker-compose.vps.yml build --quiet
+docker compose -f docker-compose.vps.yml up -d --force-recreate web
+```
+
+**En une seule commande copiable** :
+
+```bash
+cd /opt/vitrine && git pull && docker compose -f docker-compose.vps.yml build --quiet && docker compose -f docker-compose.vps.yml up -d --force-recreate web
+```
+
+> Le conteneur redémarre en quelques secondes. W-circle nginx continue de tourner sans interruption — le proxy reprend automatiquement dès que le nouveau conteneur `vitrine` est actif.
+
+### Vérifier que la mise à jour est bien en ligne
+
+```bash
+# Voir les logs du nouveau conteneur
+docker compose -f /opt/vitrine/docker-compose.vps.yml logs --tail=20 web
+
+# Vérifier que le conteneur tourne
+docker ps | grep vitrine
+```
+
+---
+
 ## Résolution de problèmes
 
 ### Le certificat échoue
